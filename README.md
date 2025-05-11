@@ -1,4 +1,4 @@
-# Minimalistic & Elegant Portfolio
+# Mini Portfolio
 
 This is a personal portfolio website designed with a focus on minimalism, elegance, and a pleasing user experience. It showcases projects, skills, experience, and education in a clean and accessible format.
 
