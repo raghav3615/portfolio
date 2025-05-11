@@ -144,8 +144,8 @@ export default function Home() {
           </div>
         </section>
         {/* Say Hello */}
-        <section className="mb-24">
-          <h2 className="text-xl font-bold mb-2">say hello👋</h2>
+        <section className="mb-20 mt-18 text-center">
+          <h2 className="text-xl font-bold m-2">say hello👋</h2>
           <a href="https://twitter.com/raghav_dadhich" target="_blank" rel="noopener noreferrer" className="text-sm text-primary underline font-medium">
             let&apos;s connect on twitter
           </a>
