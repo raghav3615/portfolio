@@ -3,6 +3,7 @@ import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import "./globals.css";
 import { ThemeProvider } from 'next-themes';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: "Raghav Dadhich",
@@ -21,6 +22,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} forcedTheme={undefined}>
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
