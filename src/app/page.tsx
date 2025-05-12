@@ -1,5 +1,5 @@
 'use client';
-import { FaTwitter, FaLinkedin, FaGithub, FaEnvelope, FaRegSun, FaRegMoon, FaHome } from 'react-icons/fa'; // Removed FaBlog
+import { FaTwitter, FaLinkedin, FaGithub, FaEnvelope, FaRegSun, FaRegMoon, FaHome, FaProjectDiagram } from 'react-icons/fa'; // Removed FaBlog
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
@@ -160,7 +160,7 @@ export default function Home() {
         </Link>
         <Link href="/projects" aria-label="Projects" className="group">
           <div className="w-8 h-8 flex items-center justify-center rounded-full transition bg-secondary/60 group-hover:bg-secondary/80">
-            <FaEnvelope className="text-sm" />
+            <FaProjectDiagram className="text-sm" />
           </div>
         </Link>
         <a href="https://github.com/raghav3615" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="group">
