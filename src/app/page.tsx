@@ -158,9 +158,9 @@ export default function Home() {
             <FaHome className="text-sm" />
           </div>
         </Link>
-        <Link href="/blog" aria-label="Blog" className="group">
+        <Link href="/projects" aria-label="Projects" className="group">
           <div className="w-8 h-8 flex items-center justify-center rounded-full transition bg-secondary/60 group-hover:bg-secondary/80">
-            <FaBlog className="text-sm" />
+            <FaEnvelope className="text-sm" />
           </div>
         </Link>
         <a href="https://github.com/raghav3615" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="group">
