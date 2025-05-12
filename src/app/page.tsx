@@ -1,5 +1,5 @@
 'use client';
-import { FaTwitter, FaLinkedin, FaGithub, FaEnvelope, FaRegSun, FaRegMoon, FaHome, FaBlog } from 'react-icons/fa';
+import { FaTwitter, FaLinkedin, FaGithub, FaEnvelope, FaRegSun, FaRegMoon, FaHome } from 'react-icons/fa'; // Removed FaBlog
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
