@@ -31,13 +31,11 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
         }
         return prev + 1.5; // Slower progress for longer loading time
       });
-    }, 45);
-
-    return () => {
+    }, 45);    return () => {
       clearInterval(textInterval);
       clearInterval(progressInterval);
     };
-  }, [onLoadingComplete]);
+  }, [onLoadingComplete, texts.length]);
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/20 backdrop-blur-sm">

@@ -21,6 +21,8 @@ This is a personal portfolio website designed with a focus on minimalism, elegan
     *   Skills
     *   Contact/Social Links (GitHub, LinkedIn, Twitter, Email)
 *   **Easy Navigation:** A persistent bottom navigation bar provides quick access to social links and theme toggling.
+*   **Analytics:** Integrated with both Vercel Analytics and Google Analytics for comprehensive traffic monitoring.
+*   **Loading Screen:** Apple-style minimalistic loading screen with "hello" and "नमस्ते" text animations.
 
 ## Getting Started
 
@@ -37,13 +39,40 @@ To run this project locally:
     # or
     # yarn install
     ```
-3.  Run the development server:
+3.  Set up environment variables (optional):
+    ```bash
+    cp .env.example .env.local
+    ```
+    Edit `.env.local` and add your Google Analytics ID:
+    ```
+    NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+    ```
+4.  Run the development server:
     ```bash
     npm run dev
     # or
     # yarn dev
     ```
     Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Analytics Setup
+
+This portfolio includes both Vercel Analytics and Google Analytics integration:
+
+### Google Analytics
+1. Create a Google Analytics account at [analytics.google.com](https://analytics.google.com)
+2. Create a new property for your website
+3. Copy your Measurement ID (format: G-XXXXXXXXXX)
+4. Add it to your `.env.local` file:
+   ```
+   NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+   ```
+5. Google Analytics will automatically track page views in production
+
+### Vercel Analytics
+Vercel Analytics is already integrated and will work automatically when deployed to Vercel.
+
+**Note:** Google Analytics only loads in production environment for privacy and development convenience.
 
 ## Project Structure
 
