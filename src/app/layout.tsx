@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Raghav Dadhich - Full Stack Developer & AI Engineer",
     description: "Portfolio of Raghav Dadhich - Full Stack Developer, AI/ML Engineer, and Computer Science student at VIT Bhopal.",
-    url: "https://your-domain.com", // Replace with your actual domain
+    url: "https://raghavdev.vercel.app/", // Replace with your actual domain
     siteName: "Raghav Dadhich Portfolio",
     locale: "en_US",
     type: "website",
