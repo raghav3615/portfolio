@@ -5,6 +5,13 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import ReactGA from "react-ga4";
+
+
+ReactGA.initialize("G-CNF6QV2W0E");
+
+// Track page view
+ReactGA.send({ hitType: "pageview", page: window.location.pathname });
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
