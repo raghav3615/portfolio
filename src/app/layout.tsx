@@ -43,9 +43,9 @@ export default function RootLayout({
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
       >        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} forcedTheme={undefined}>
-          <ClientWrapper>
+          
             {children}
-          </ClientWrapper>
+          
           <Analytics />
           <GoogleAnalyticsWrapper gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
         </ThemeProvider>
