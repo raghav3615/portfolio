@@ -145,11 +145,10 @@ export default function Home() {
         </section>
         
         
-        {/* Education */}
+         {/* Education 
         <section className="mb-6">
           <h2 className="text-xl font-bold mb-2">Education</h2>
             <div className="flex items-center gap-3">
-            {/* University logo placeholder */}
             <div className="w-10 h-10 rounded-full overflow-hidden">
               <Image
               src="/clg.png" 
@@ -164,7 +163,7 @@ export default function Home() {
             </div>
             <div className="text-xs text-muted-foreground whitespace-nowrap">2023 - 2027</div>
           </div>
-        </section>
+        </section> */}
         
         {/* Get in Touch Form  */}
         <section className="mb-20 mt-12 py-8">
