@@ -9,10 +9,10 @@ interface ResumeButtonProps {
 export default function ResumeButton({ className = "" }: ResumeButtonProps) {
   const handleDownload = () => {
     // You can replace this with your actual resume URL
-    const resumeUrl = "/resume.pdf"; // Place your resume.pdf in the public folder
+    const resumeUrl = "/Resume.docx"; // Place your resume.pdf in the public folder
     const link = document.createElement('a');
     link.href = resumeUrl;
-    link.download = 'Raghav_Dadhich_Resume.pdf';
+    link.download = 'Resume.docs';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

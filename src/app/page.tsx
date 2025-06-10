@@ -1,5 +1,5 @@
 'use client';
-import { FaLinkedin, FaGithub, FaEnvelope, FaRegSun, FaRegMoon, FaHome, FaProjectDiagram, FaCode, FaAward, FaMapMarkerAlt, FaRocket } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaRegSun, FaRegMoon, FaHome, FaProjectDiagram, FaCode, FaMapMarkerAlt, FaRocket } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { HiOutlineSparkles, HiOutlineLightBulb } from 'react-icons/hi';
 import Link from 'next/link';
@@ -36,8 +36,6 @@ export default function Home() {
     window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
   };
 
-  const skills = ['React', 'Next.js', 'JavaScript', 'TypeScript', 'MongoDB', 'Node.js', 'Python', 'PyTorch', 'PostgreSQL', 'C++'];
-
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground font-sans relative pb-28 overflow-hidden">
       {/* Animated Background Elements */}
@@ -53,7 +51,7 @@ export default function Home() {
       </div>
 
       {/* Main Container */}
-      <div className="w-full max-w-2xl mx-auto px-4 sm:px-8 relative z-10">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-8 relative z-10">
         {/* Professional Profile Card */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -84,16 +82,16 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+            <div className="flex flex-row items-start gap-4 sm:gap-6">
               {/* Profile Picture */}
               <motion.div 
                 className="flex-shrink-0"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] rounded-2xl overflow-hidden shadow-lg border-2 border-border/30">
+                <div className="w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] rounded-2xl overflow-hidden shadow-lg border-2 border-border/30">
                   <Image
-                    src="/dp2.jpg"
+                    src="/dp3.jpg"
                     alt="Raghav Dadhich - Full Stack Developer"
                     width={500}
                     height={500}
@@ -103,12 +101,12 @@ export default function Home() {
               </motion.div>
               
               {/* Profile Info */}
-              <div className="flex-1 text-center sm:text-left">
+              <div className="flex-1 text-left">
                 <motion.h1 
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="text-2xl sm:text-3xl font-bold mb-1 text-foreground"
+                  className="text-xl sm:text-3xl font-bold mb-1 text-foreground"
                 >
                   Raghav Dadhich
                 </motion.h1>
@@ -117,9 +115,9 @@ export default function Home() {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="text-base sm:text-lg text-muted-foreground mb-4"
+                  className="text-sm sm:text-lg text-muted-foreground mb-3 sm:mb-4"
                 >
-                  Full Stack Developer & Open Source Contributor
+                  Full Stack Developer
                 </motion.p>
                 
                 {/* Contact Info */}
@@ -127,25 +125,25 @@ export default function Home() {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
-                  className="space-y-2 mb-4"
+                  className="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4"
                 >
-                  <div className="flex items-center justify-center sm:justify-start gap-2 text-sm text-muted-foreground">
-                    <FaMapMarkerAlt className="text-primary w-4 h-4" />
+                  <div className="flex items-center justify-start gap-2 text-xs sm:text-sm text-muted-foreground">
+                    <FaMapMarkerAlt className="text-primary w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                     <span>Bhopal, India</span>
                   </div>
                   
-                  <div className="flex items-center justify-center sm:justify-start gap-2 text-sm">
-                    <FaEnvelope className="text-primary w-4 h-4" />
+                  <div className="flex items-center justify-start gap-2 text-xs sm:text-sm">
+                    <FaEnvelope className="text-primary w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                     <a 
                       href="mailto:dadhichraghav896@gmail.com" 
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors truncate"
                     >
                       dadhichraghav896@gmail.com
                     </a>
                   </div>
                   
-                  <div className="flex items-center justify-center sm:justify-start gap-2 text-sm">
-                    <FaLinkedin className="text-primary w-4 h-4" />
+                  <div className="flex items-center justify-start gap-2 text-xs sm:text-sm">
+                    <FaLinkedin className="text-primary w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                     <a 
                       href="https://www.linkedin.com/in/raghavhere/" 
                       target="_blank" 
@@ -157,14 +155,12 @@ export default function Home() {
                   </div>
                 </motion.div>
                 
-                
-                
                 {/* Action Button */}
                 <motion.div 
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
-                  className="flex justify-center sm:justify-start"
+                  className="flex justify-start"
                 >
                   <ResumeButton />
                 </motion.div>
@@ -186,18 +182,18 @@ export default function Home() {
           </h2>
           <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-xl p-6 space-y-3">
             <p className="text-muted-foreground leading-relaxed">
-              Passionate <span className="text-foreground font-semibold">Full Stack Developer</span> and <span className="text-foreground font-semibold">AI/ML Engineer</span> with hands-on experience in building scalable web applications and intelligent systems.
+              I&apos;m a <span className="text-foreground font-semibold">Full Stack Developer</span> and <span className="text-foreground font-semibold">Open Source Contributor</span>.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I specialize in <span className="text-primary font-medium">modern web technologies</span> and love creating solutions that make a real impact. Currently pursuing Computer Science with AI/ML specialization at VIT Bhopal.
+              I specialize in <span className="text-primary font-medium">modern web technologies</span> and love creating solutions that make a real impact. Currently pursuing Computer Science with AI/ML specialization.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              When I&apos;m not coding, you&apos;ll find me playing football ⚽, strategizing over chess ♟️, discovering new music 🎵, or crafting the perfect meme 😄
+              When I&apos;m not coding, you&apos;ll find me watching football ⚽, strategizing over chess ♟️, discovering new music 🎵, or crafting the perfect meme 😄
             </p>
             <div className="pt-2">
               <Link 
                 href="mailto:dadhichraghav896@gmail.com" 
-                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
+                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors underline"
               >
                 <FaEnvelope />
                 Let&apos;s connect and build something amazing together!
@@ -404,37 +400,7 @@ export default function Home() {
             </Link>
           </motion.div>
         </motion.section>
-        {/* Enhanced Skills Section */}
-        <motion.section 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
-          className="mb-8"
-        >
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-            <FaCode className="text-primary" />
-            Technical Skills
-          </h2>
-          <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-xl p-6">
-            <div className="mb-6">
-              <TechStack 
-                technologies={skills} 
-                variant="icons-only" 
-                size="lg" 
-              />
-            </div>
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.5 }}
-              className="pt-4 border-t border-border/50"
-            >
-              <p className="text-muted-foreground text-sm text-center">
-                Constantly learning and exploring new technologies to stay at the forefront of innovation 🚀
-              </p>
-            </motion.div>
-          </div>
-        </motion.section>
+        
 
         {/* Featured Technologies Section */}
         <motion.section 
@@ -445,11 +411,11 @@ export default function Home() {
         >
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
             <HiOutlineSparkles className="text-primary" />
-            Featured Technologies
+            Tech Stack
           </h2>
           <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-xl p-6">
             <TechStack 
-              technologies={['React', 'Next.js', 'TypeScript', 'Python', 'PyTorch', 'MongoDB']} 
+              technologies={['React', 'Next.js', 'JavaScript', 'TypeScript','Tailwind CSS', 'MongoDB', 'Node.js', 'Python', 'PyTorch', 'PostgreSQL', 'C++', 'Docker']} 
               variant="icons-with-text" 
               size="lg" 
             />
@@ -607,7 +573,7 @@ export default function Home() {
         transition={{ duration: 0.6, delay: 1.3 }}
         className="w-full border-t border-border/50 bg-card/20 backdrop-blur-sm"
       >
-        <div className="max-w-2xl mx-auto px-4 sm:px-8 py-8 flex flex-col items-center gap-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-8 py-8 flex flex-col items-center gap-6">
           <div className="flex items-center gap-6">
             <motion.a 
               whileHover={{ scale: 1.1 }}

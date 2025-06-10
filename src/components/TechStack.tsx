@@ -170,9 +170,8 @@ export default function TechStack({
         return renderPillVariant(tech, index);
     }
   };
-
   return (
-    <div className={`flex flex-wrap gap-2 ${variant === 'icons-with-text' ? 'grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5' : ''}`}>
+    <div className={`flex flex-wrap gap-2 ${variant === 'icons-with-text' ? 'grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6' : ''}`}>
       {displayTechs.map(renderTech)}
       {remainingCount > 0 && (
         <motion.span
