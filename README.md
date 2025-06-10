@@ -1,99 +1,149 @@
-# Mini Portfolio
+#  Raghav's Portfolio 
 
-This is a personal portfolio website designed with a focus on minimalism, elegance, and a pleasing user experience. It showcases projects, skills, experience, and education in a clean and accessible format.
+A modern, responsive portfolio website built with Next.js, featuring beautiful animations, glassmorphism design, and professional presentation.
 
-## Features
+## ✨ Features
 
-*   **Minimalist Design:** Clean and uncluttered interface to keep the focus on the content.
-*   **Elegant UI:** Aesthetically pleasing design with attention to typography and spacing.
-*   **Dark & Light Themes:** Seamlessly switch between dark and light modes for optimal viewing comfort, powered by `next-themes`.
-*   **Responsive:** Adapts to different screen sizes for a great experience on desktop, tablet, and mobile.
-*   **Built with Modern Technologies:**
-    *   [Next.js](https://nextjs.org/) for a fast and optimized React framework.
-    *   [React](https://react.dev/) for building the user interface.
-    *   [Tailwind CSS](https://tailwindcss.com/) for utility-first styling.
-    *   [TypeScript](https://www.typescriptlang.org/) for type safety.
-*   **Sections:**
-    *   About Me
-    *   Experience
-    *   Featured Projects (with links to GitHub)
-    *   Education
-    *   Skills
-    *   Contact/Social Links (GitHub, LinkedIn, Twitter, Email)
-*   **Easy Navigation:** A persistent bottom navigation bar provides quick access to social links and theme toggling.
-*   **Analytics:** Integrated with both Vercel Analytics and Google Analytics for comprehensive traffic monitoring.
-*   **Loading Screen:** Apple-style minimalistic loading screen with "hello" and "नमस्ते" text animations.
+### Design & User Experience
+- **Modern Glassmorphism UI** with subtle transparency and blur effects
+- **Smooth Animations** powered by Framer Motion
+- **Responsive Design** that works perfectly on all devices
+- **Dark/Light Theme** with system preference detection
+- **Interactive Elements** with hover effects and micro-interactions
 
-## Getting Started
+### Professional Sections
+- **About Me** - Personal introduction with personality
+- **Experience** - Detailed work history with company logos and descriptions
+- **Featured Projects** - Showcase of key projects with tech stacks
+- **Skills** - Technical skills with beautiful pill design
+- **Education** - Academic background and specializations
+- **Testimonials** - Client/colleague feedback
+- **Professional Metrics** - Achievement numbers
+- **Contact Form** - Integrated email contact system
 
-To run this project locally:
+### Technical Features
+- **SEO Optimized** with proper meta tags
+- **Performance Focused** with Next.js optimization
+- **TypeScript** for better code quality
+- **Tailwind CSS** for efficient styling
+- **React Icons** for consistent iconography
 
-1.  Clone the repository:
-    ```bash
-    git clone <your-repository-url>
-    cd mini-cv 
-    ```
-2.  Install dependencies:
-    ```bash
-    npm install
-    # or
-    # yarn install
-    ```
-3.  Set up environment variables (optional):
-    ```bash
-    cp .env.example .env.local
-    ```
-    Edit `.env.local` and add your Google Analytics ID:
-    ```
-    NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
-    ```
-4.  Run the development server:
-    ```bash
-    npm run dev
-    # or
-    # yarn dev
-    ```
-    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-## Analytics Setup
+- **Framework**: Next.js 15.3.2
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4.1.6
+- **Animations**: Framer Motion 12.10.5
+- **Icons**: React Icons 5.5.0
+- **Theme**: next-themes 0.4.6
 
-This portfolio includes both Vercel Analytics and Google Analytics integration:
+## 🚀 Getting Started
 
-### Google Analytics
-1. Create a Google Analytics account at [analytics.google.com](https://analytics.google.com)
-2. Create a new property for your website
-3. Copy your Measurement ID (format: G-XXXXXXXXXX)
-4. Add it to your `.env.local` file:
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd mini-cv
    ```
-   NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+
+2. **Install dependencies**
+   ```bash
+   npm install
    ```
-5. Google Analytics will automatically track page views in production
 
-### Vercel Analytics
-Vercel Analytics is already integrated and will work automatically when deployed to Vercel.
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-**Note:** Google Analytics only loads in production environment for privacy and development convenience.
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Project Structure
+### Build for Production
 
-```
-.
-├── public/             # Static assets (images, icons)
-├── src/
-│   ├── app/            # Next.js App Router pages and layouts
-│   │   ├── page.tsx    # Main page component
-│   │   └── ...
-│   ├── components/     # Reusable UI components (if any)
-│   └── lib/            # Utility functions or libraries (if any)
-├── tailwind.config.js  # Tailwind CSS configuration
-├── next.config.ts      # Next.js configuration
-└── package.json        # Project dependencies and scripts
+```bash
+npm run build
+npm start
 ```
 
-## Key Files
+## 📁 Project Structure
 
-*   [`src/app/page.tsx`](src/app/page.tsx): The main page component containing the portfolio content.
-*   [`tailwind.config.js`](tailwind.config.js): Configuration for Tailwind CSS.
-*   [`package.json`](package.json): Lists project dependencies and scripts.
+```
+src/
+├── app/
+│   ├── page.tsx          # Main homepage
+│   ├── projects/         # Projects showcase
+│   ├── blog/             # Blog section
+│   └── globals.css       # Global styles
+├── components/
+│   ├── ResumeButton.tsx  # Download resume component
+│   └── ui/               # Reusable UI components
+└── lib/
+    └── utils.ts          # Utility functions
+```
 
-This portfolio is built using Next.js and React, styled with Tailwind CSS. The main content is located in [`src/app/page.tsx`](src/app/page.tsx).
+## 🎨 Customization
+
+### Personal Information
+1. Update personal details in `src/app/page.tsx`
+2. Replace profile image in `public/dp2.jpg`
+3. Update company logos in `public/` directory
+
+### Projects
+1. Modify the `projects` array in `src/app/projects/page.tsx`
+2. Add project screenshots to `public/` directory
+
+### Resume
+1. Add your resume PDF to `public/resume.pdf`
+2. The download button will automatically work
+
+### Contact Information
+1. Update email addresses throughout the codebase
+2. Modify social media links in the navigation
+
+## 🌟 Key Improvements Made
+
+### Visual Enhancements
+- ✅ Modern glassmorphism design with backdrop blur effects
+- ✅ Smooth entrance animations and hover effects
+- ✅ Professional color scheme with gradient accents
+- ✅ Enhanced typography and spacing
+
+### Content Improvements
+- ✅ More detailed project descriptions with tech stacks
+- ✅ Professional experience section with company details
+- ✅ Testimonials section for social proof
+- ✅ Achievement metrics for impact
+- ✅ Education section with specializations
+
+### User Experience
+- ✅ Improved navigation with enhanced bottom bar
+- ✅ Resume download functionality
+- ✅ Better mobile responsiveness
+- ✅ Loading states and error handling
+
+### Technical Improvements
+- ✅ Better code organization and TypeScript usage
+- ✅ Performance optimizations
+- ✅ SEO improvements
+- ✅ Accessibility enhancements
+
+## 📧 Contact
+
+For questions or collaboration opportunities:
+- **Email**: dadhichraghav896@gmail.com
+- **LinkedIn**: [raghavhere](https://www.linkedin.com/in/raghavhere/)
+- **GitHub**: [raghav3615](https://github.com/raghav3615)
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+⭐ **Star this repo if you found it helpful!**
