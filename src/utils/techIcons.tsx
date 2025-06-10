@@ -1,3 +1,4 @@
+import React from 'react';
 import { 
   SiReact, 
   SiNextdotjs, 
@@ -117,7 +118,7 @@ export const renderTechIcon = (
   techName: string, 
   size: number = 20, 
   className: string = ''
-): JSX.Element | null => {
+): React.ReactElement | null => {
   const techData = getTechIcon(techName);
   if (!techData) return null;
   
