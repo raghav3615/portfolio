@@ -491,60 +491,60 @@ export default function Home() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.2 }}
-        className="fixed left-1/2 -translate-x-1/2 bottom-6 w-auto max-w-[85vw] px-4 py-3 bg-background/80 backdrop-blur-xl shadow-2xl rounded-2xl flex items-center h-auto z-50 gap-3 border border-border/50"
+        className="fixed left-1/2 -translate-x-1/2 bottom-4 w-auto max-w-[90vw] px-3 py-2 bg-background/80 backdrop-blur-xl shadow-2xl rounded-xl flex items-center h-auto z-50 gap-2 border border-border/50"
       >
         <Link href="/" aria-label="Home" className="group">
           <motion.div 
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="w-10 h-10 flex items-center justify-center rounded-xl transition bg-primary/10 group-hover:bg-primary/20 border border-primary/20"
+            className="w-8 h-8 flex items-center justify-center rounded-lg transition bg-primary/10 group-hover:bg-primary/20 border border-primary/20"
           >
-            <FaHome className="text-primary" />
+            <FaHome className="text-primary text-sm" />
           </motion.div>
         </Link>
         <Link href="/projects" aria-label="Projects" className="group">
           <motion.div 
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="w-10 h-10 flex items-center justify-center rounded-xl transition bg-secondary/60 group-hover:bg-secondary/80 border border-border/50"
+            className="w-8 h-8 flex items-center justify-center rounded-lg transition bg-secondary/60 group-hover:bg-secondary/80 border border-border/50"
           >
-            <FaProjectDiagram className="text-foreground" />
+            <FaProjectDiagram className="text-foreground text-sm" />
           </motion.div>
         </Link>
         <a href="https://github.com/raghav3615" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="group">
           <motion.div 
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="w-10 h-10 flex items-center justify-center rounded-xl transition bg-secondary/60 group-hover:bg-secondary/80 border border-border/50"
+            className="w-8 h-8 flex items-center justify-center rounded-lg transition bg-secondary/60 group-hover:bg-secondary/80 border border-border/50"
           >
-            <FaGithub className="text-foreground" />
+            <FaGithub className="text-foreground text-sm" />
           </motion.div>
         </a>
         <a href="https://www.linkedin.com/in/raghavhere/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="group">
           <motion.div 
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="w-10 h-10 flex items-center justify-center rounded-xl transition bg-secondary/60 group-hover:bg-secondary/80 border border-border/50"
+            className="w-8 h-8 flex items-center justify-center rounded-lg transition bg-secondary/60 group-hover:bg-secondary/80 border border-border/50"
           >
-            <FaLinkedin className="text-foreground" />
+            <FaLinkedin className="text-foreground text-sm" />
           </motion.div>
         </a>
         <a href="https://twitter.com/raghav_dadhich" target="_blank" rel="noopener noreferrer" aria-label="X" className="group">
           <motion.div 
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="w-10 h-10 flex items-center justify-center rounded-xl transition bg-secondary/60 group-hover:bg-secondary/80 border border-border/50"
+            className="w-8 h-8 flex items-center justify-center rounded-lg transition bg-secondary/60 group-hover:bg-secondary/80 border border-border/50"
           >
-            <FaXTwitter className="text-foreground" />
+            <FaXTwitter className="text-foreground text-sm" />
           </motion.div>
         </a>
         <a href="mailto:dadhichraghav896@gmail.com" aria-label="Email" className="group">
           <motion.div 
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="w-10 h-10 flex items-center justify-center rounded-xl transition bg-secondary/60 group-hover:bg-secondary/80 border border-border/50"
+            className="w-8 h-8 flex items-center justify-center rounded-lg transition bg-secondary/60 group-hover:bg-secondary/80 border border-border/50"
           >
-            <FaEnvelope className="text-foreground" />
+            <FaEnvelope className="text-foreground text-sm" />
           </motion.div>
         </a>
         <button
@@ -555,12 +555,12 @@ export default function Home() {
           <motion.div 
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="w-10 h-10 flex items-center justify-center rounded-xl transition bg-secondary/60 group-hover:bg-secondary/80 border border-border/50"
+            className="w-8 h-8 flex items-center justify-center rounded-lg transition bg-secondary/60 group-hover:bg-secondary/80 border border-border/50"
           >
             {mounted && (
               theme === 'dark' ? 
-              <FaRegMoon className="text-foreground" /> : 
-              <FaRegSun className="text-foreground" />
+              <FaRegMoon className="text-foreground text-sm" /> : 
+              <FaRegSun className="text-foreground text-sm" />
             )}
           </motion.div>
         </button>
