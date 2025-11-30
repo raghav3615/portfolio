@@ -1,6 +1,5 @@
 'use client';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaArrowLeft, FaCode, FaRocket, FaBrain, FaShieldAlt, FaGamepad, FaMobile } from 'react-icons/fa';
 import { HiOutlineSparkles, HiOutlineCode } from 'react-icons/hi';
 import TechStack from '@/components/TechStack';
@@ -14,8 +13,6 @@ export default function Projects() {
       github: "https://github.com/raghav3615/hackcrux",
       demo: null,
       icon: HiOutlineSparkles,
-      gradient: "from-blue-500/20 to-purple-500/20",
-      color: "blue",
       year: "2025"
     },
     {
@@ -25,8 +22,6 @@ export default function Projects() {
       github: "https://github.com/raghav3615/organdonation",
       demo: null,
       icon: FaShieldAlt,
-      gradient: "from-green-500/20 to-emerald-500/20",
-      color: "green",
       year: "2025"
     },
     {
@@ -36,8 +31,6 @@ export default function Projects() {
       github: "https://github.com/raghav3615/taskflow",
       demo: "https://taskflow-demo.vercel.app",
       icon: FaCode,
-      gradient: "from-orange-500/20 to-red-500/20",
-      color: "orange",
       year: "2024"
     },
     {
@@ -47,8 +40,6 @@ export default function Projects() {
       github: "https://github.com/raghav3615/smartchat",
       demo: null,
       icon: FaBrain,
-      gradient: "from-purple-500/20 to-pink-500/20",
-      color: "purple",
       year: "2024"
     },
     {
@@ -58,8 +49,6 @@ export default function Projects() {
       github: "https://github.com/raghav3615/gamehub",
       demo: "https://gamehub-demo.netlify.app",
       icon: FaGamepad,
-      gradient: "from-cyan-500/20 to-blue-500/20",
-      color: "cyan",
       year: "2024"
     },
     {
@@ -69,164 +58,109 @@ export default function Projects() {
       github: "https://github.com/raghav3615/weatherwise",
       demo: null,
       icon: FaMobile,
-      gradient: "from-teal-500/20 to-green-500/20",
-      color: "teal",
       year: "2024"
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  };  return (
-    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute top-60 right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-40 left-1/2 w-36 h-36 bg-secondary/10 rounded-full blur-3xl" />
-      </div>
-
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-8 pt-10 pb-20">
+  return (
+    <div className="min-h-screen bg-background text-foreground font-mono p-4 md:p-8 selection:bg-primary selection:text-background overflow-x-hidden">
+      <div className="max-w-4xl mx-auto space-y-8">
+        
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
-        >
-          <Link 
-            href="/" 
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-6 group"
-          >
-            <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
-            Back to Home
-          </Link>
-          
-          <div className="text-center">
-            <motion.h1 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text"
+        <div className="border-b border-border pb-4 mb-8">
+          <div className="flex items-center gap-2 mb-4">
+            <Link 
+              href="/" 
+              className="text-primary hover:underline flex items-center gap-2"
             >
-              My Projects
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-muted-foreground text-lg max-w-2xl mx-auto"
-            >
-              A collection of projects I&apos;ve built, from AI-powered applications to modern web solutions. 
-              Each project represents a learning journey and a problem solved.
-            </motion.p>
+              <FaArrowLeft />
+              cd ..
+            </Link>
           </div>
-        </motion.div>
+          <h1 className="text-2xl md:text-3xl font-bold text-primary">
+            <span className="text-foreground">raghav@portfolio:~/projects$</span> ls -la
+          </h1>
+          <p className="text-sm opacity-70 mt-2">
+            Total {projects.length} projects found.
+          </p>
+        </div>
 
         {/* Projects Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid gap-6 md:grid-cols-2"
-        >
+        <div className="grid gap-6">
           {projects.map((project, index) => (
-            <motion.div
+            <div
               key={index}
-              variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
-              className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-xl p-6 transition-all hover:border-primary/30 group"
+              className="border border-border p-4 hover:bg-primary/5 transition-colors group"
             >
               {/* Project Header */}
-              <div className="flex items-start gap-4 mb-4">
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
-                  <project.icon className={`text-${project.color}-500 text-xl`} />
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
+                <div className="flex items-center gap-3">
+                  <span className="text-primary font-bold text-lg">
+                    ./{project.title.toLowerCase().replace(/\s+/g, '-')}
+                  </span>
+                  <span className="text-xs opacity-50 border border-border px-1">
+                    {project.year}
+                  </span>
                 </div>
-                <div className="flex-1">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="font-bold text-xl group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-                    <span className="text-sm text-muted-foreground bg-secondary/50 px-3 py-1 rounded-full">
-                      {project.year}
-                    </span>
-                  </div>
+                <div className="flex gap-4 text-sm">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 hover:text-primary hover:underline"
+                  >
+                    <FaGithub />
+                    [ source ]
+                  </a>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 hover:text-primary hover:underline"
+                    >
+                      <FaExternalLinkAlt />
+                      [ demo ]
+                    </a>
+                  )}
                 </div>
               </div>
 
               {/* Project Description */}
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+              <p className="text-sm opacity-80 mb-4 pl-4 border-l-2 border-border/30">
                 {project.description}
-              </p>              {/* Tech Stack */}
-              <div className="mb-4">
+              </p>
+
+              {/* Tech Stack */}
+              <div className="pl-4">
+                <div className="text-xs opacity-60 mb-1">Dependencies:</div>
                 <TechStack 
                   technologies={project.tech} 
                   variant="pills" 
                   size="sm" 
                 />
               </div>
-
-              {/* Project Links */}
-              <div className="flex gap-3">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  <FaGithub />
-                  Code
-                </a>
-                {project.demo && (
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
-                  >
-                    <FaExternalLinkAlt />
-                    Live Demo
-                  </a>
-                )}
-              </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 text-center"
-        >
-          <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-xl p-8">
+        <div className="mt-12 border-t border-border pt-8 text-center">
+          <div className="inline-block border border-dashed border-primary p-6">
             <HiOutlineCode className="text-primary text-3xl mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-4">Want to Collaborate?</h3>
-            <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-              I&apos;m always excited to work on new projects and tackle interesting challenges. 
-              Let&apos;s build something amazing together!
+            <h3 className="text-xl font-bold mb-2">Want to Collaborate?</h3>
+            <p className="text-sm opacity-80 mb-4 max-w-md mx-auto">
+              I&apos;m always excited to work on new projects and tackle interesting challenges.
             </p>
             <Link
               href="mailto:dadhichraghav896@gmail.com"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground px-6 py-3 rounded-xl font-semibold transition-all"
+              className="inline-flex items-center gap-2 bg-primary text-background px-6 py-2 font-bold hover:opacity-90 transition-opacity"
             >
-              Start a Project
+              [ START NEW PROJECT ]
               <FaRocket />
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

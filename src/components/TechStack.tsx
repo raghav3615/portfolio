@@ -1,5 +1,4 @@
 'use client';
-import { motion } from 'framer-motion';
 import { renderTechIcon } from '@/utils/techIcons';
 
 interface TechStackProps {
@@ -42,121 +41,82 @@ export default function TechStack({
       text: 'text-base'
     }
   };
+
   const renderPillVariant = (tech: string, index: number) => {
     const techIcon = renderTechIcon(tech, sizeClasses[size].icon);
     
     return (
-      <motion.span
+      <span
         key={tech}
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: index * 0.1 }}
-        whileHover={{ scale: 1.05, y: -2 }}
         className={`
           inline-flex items-center gap-2 
-          bg-gradient-to-r from-primary/10 to-accent/10 
-          backdrop-blur-sm border border-primary/20 
-          rounded-lg font-medium transition-all duration-300
-          hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10
-          hover:from-primary/15 hover:to-accent/15
+          border border-primary/50
+          font-mono transition-all duration-300
+          hover:bg-primary/10
           ${sizeClasses[size].pill}
           ${className}
         `}
         title={showTooltip ? tech : undefined}
       >
         {techIcon && (
-          <motion.div whileHover={{ rotate: 10 }}>
+          <div>
             {techIcon}
-          </motion.div>
+          </div>
         )}
-        <span>{tech}</span>
-      </motion.span>
+        <span>[{tech}]</span>
+      </span>
     );
   };
+
   const renderIconsOnlyVariant = (tech: string, index: number) => {
     const techIcon = renderTechIcon(tech, sizeClasses[size].icon);
     
-    if (!techIcon) {
-      return (
-        <motion.div
-          key={tech}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: index * 0.1 }}
-          whileHover={{ scale: 1.15, rotate: 5 }}
-          className={`
-            flex items-center justify-center
-            bg-gradient-to-br from-gray-500/20 to-gray-600/20
-            backdrop-blur-sm border border-gray-400/20
-            rounded-xl transition-all duration-300 hover:border-gray-400/40
-            hover:shadow-lg hover:shadow-gray-400/20
-            ${sizeClasses[size].iconOnly}
-            ${className}
-          `}
-          title={showTooltip ? tech : undefined}
-        >
-          <span className={`font-bold text-gray-600 ${sizeClasses[size].text}`}>
-            {tech.charAt(0)}
-          </span>
-        </motion.div>
-      );
-    }
-
     return (
-      <motion.div
+      <div
         key={tech}
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: index * 0.1 }}
-        whileHover={{ scale: 1.15, rotate: 5 }}
         className={`
           flex items-center justify-center
-          bg-gradient-to-br from-primary/10 to-accent/10
-          backdrop-blur-sm border border-primary/20
-          rounded-xl transition-all duration-300 hover:border-primary/40
-          hover:shadow-lg hover:shadow-primary/20
+          border border-primary/50
+          transition-all duration-300 hover:bg-primary/10
           ${sizeClasses[size].iconOnly}
           ${className}
         `}
         title={showTooltip ? tech : undefined}
       >
-        {techIcon}
-      </motion.div>
+        {techIcon || (
+          <span className={`font-bold text-primary ${sizeClasses[size].text}`}>
+            {tech.charAt(0)}
+          </span>
+        )}
+      </div>
     );
   };
+
   const renderIconsWithTextVariant = (tech: string, index: number) => {
     const techIcon = renderTechIcon(tech, sizeClasses[size].icon);
     
     return (
-      <motion.div
+      <div
         key={tech}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: index * 0.1 }}
-        whileHover={{ scale: 1.05, y: -5 }}
         className={`
-          flex flex-col items-center gap-3 p-4
-          bg-card/40 backdrop-blur-md border border-border/50
-          rounded-xl transition-all duration-300 hover:border-primary/40
-          hover:shadow-lg hover:shadow-primary/10 text-center
+          flex flex-col items-center gap-2 p-2
+          border border-primary/50
+          transition-all duration-300 hover:bg-primary/10
           group cursor-pointer
           ${className}
         `}
       >
-        <motion.div 
-          className="flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 group-hover:from-primary/20 group-hover:to-accent/20 transition-all duration-300"
-          whileHover={{ rotate: 5 }}
-        >
+        <div className="flex items-center justify-center w-8 h-8">
           {techIcon || (
-            <div className="w-8 h-8 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center">
-              <span className="text-sm font-bold">{tech.charAt(0)}</span>
+            <div className="w-6 h-6 flex items-center justify-center border border-primary/30">
+              <span className="text-xs font-bold">{tech.charAt(0)}</span>
             </div>
           )}
-        </motion.div>
-        <span className={`font-medium text-foreground group-hover:text-primary transition-colors duration-300 ${sizeClasses[size].text}`}>
+        </div>
+        <span className={`font-mono text-primary ${sizeClasses[size].text}`}>
           {tech}
         </span>
-      </motion.div>
+      </div>
     );
   };
 
@@ -170,24 +130,22 @@ export default function TechStack({
         return renderPillVariant(tech, index);
     }
   };
+
   return (
     <div className={`flex flex-wrap gap-2 ${variant === 'icons-with-text' ? 'grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6' : ''}`}>
       {displayTechs.map(renderTech)}
       {remainingCount > 0 && (
-        <motion.span
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: displayTechs.length * 0.1 }}
+        <span
           className={`
             inline-flex items-center justify-center
-            bg-muted/50 text-muted-foreground
-            rounded-lg font-medium
+            border border-dashed border-primary/50 text-primary
+            font-mono
             ${sizeClasses[size].pill}
             ${className}
           `}
         >
           +{remainingCount}
-        </motion.span>
+        </span>
       )}
     </div>
   );

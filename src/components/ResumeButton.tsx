@@ -1,5 +1,4 @@
 'use client';
-import { motion } from 'framer-motion';
 import { FaDownload } from 'react-icons/fa';
 
 interface ResumeButtonProps {
@@ -19,14 +18,12 @@ export default function ResumeButton({ className = "" }: ResumeButtonProps) {
   };
 
   return (
-    <motion.button
+    <button
       onClick={handleDownload}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      className={`inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground px-4 py-2 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl ${className}`}
+      className={`inline-flex items-center gap-2 bg-primary text-background px-4 py-2 font-bold hover:opacity-90 transition-opacity border border-primary ${className}`}
     >
       <FaDownload className="text-sm" />
-      Download Resume
-    </motion.button>
+      [ DOWNLOAD RESUME ]
+    </button>
   );
 }
