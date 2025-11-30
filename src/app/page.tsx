@@ -1,9 +1,7 @@
 'use client';
-import { FaLinkedin, FaGithub, FaEnvelope, FaTerminal } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
-import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   const [showCursor, setShowCursor] = useState(true);

@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { FaArrowLeft, FaPen, FaClock, FaRocket, FaBrain, FaCode } from 'react-icons/fa';
+import { FaArrowLeft, FaPen, FaRocket, FaBrain, FaCode } from 'react-icons/fa';
 import { HiOutlineSparkles, HiOutlineLightBulb } from 'react-icons/hi';
 
 export default function Blog() {
@@ -90,7 +90,7 @@ export default function Blog() {
                         {post.category}
                       </span>
                       <span className="text-xs opacity-50">
-                        // {post.readTime}
+                        {'//'} {post.readTime}
                       </span>
                     </div>
                   </div>

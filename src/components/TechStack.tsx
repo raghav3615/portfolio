@@ -42,7 +42,7 @@ export default function TechStack({
     }
   };
 
-  const renderPillVariant = (tech: string, index: number) => {
+  const renderPillVariant = (tech: string) => {
     const techIcon = renderTechIcon(tech, sizeClasses[size].icon);
     
     return (
@@ -68,7 +68,7 @@ export default function TechStack({
     );
   };
 
-  const renderIconsOnlyVariant = (tech: string, index: number) => {
+  const renderIconsOnlyVariant = (tech: string) => {
     const techIcon = renderTechIcon(tech, sizeClasses[size].icon);
     
     return (
@@ -92,7 +92,7 @@ export default function TechStack({
     );
   };
 
-  const renderIconsWithTextVariant = (tech: string, index: number) => {
+  const renderIconsWithTextVariant = (tech: string) => {
     const techIcon = renderTechIcon(tech, sizeClasses[size].icon);
     
     return (
@@ -120,14 +120,14 @@ export default function TechStack({
     );
   };
 
-  const renderTech = (tech: string, index: number) => {
+  const renderTech = (tech: string) => {
     switch (variant) {
       case 'icons-only':
-        return renderIconsOnlyVariant(tech, index);
+        return renderIconsOnlyVariant(tech);
       case 'icons-with-text':
-        return renderIconsWithTextVariant(tech, index);
+        return renderIconsWithTextVariant(tech);
       default:
-        return renderPillVariant(tech, index);
+        return renderPillVariant(tech);
     }
   };
 
