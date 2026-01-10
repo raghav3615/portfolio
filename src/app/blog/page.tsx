@@ -3,6 +3,9 @@ import Link from 'next/link';
 import { FaArrowLeft, FaPen, FaRocket, FaBrain, FaCode } from 'react-icons/fa';
 import { HiOutlineSparkles, HiOutlineLightBulb } from 'react-icons/hi';
 
+// Note: Page-specific metadata is handled in layout.tsx template
+// Blog page will use the default title template: "Blog | Raghav Dadhich"
+
 export default function Blog() {
   const upcomingPosts = [
     {
@@ -17,7 +20,7 @@ export default function Blog() {
       title: "Modern React Patterns in 2025",
       description: "Exploring the latest React patterns, hooks, and best practices for scalable applications",
       category: "React",
-      readTime: "6 min read", 
+      readTime: "6 min read",
       date: "PENDING",
       icon: FaCode
     },
@@ -26,7 +29,7 @@ export default function Blog() {
       description: "A complete guide to building and deploying full-stack applications in the modern era",
       category: "DevOps",
       readTime: "12 min read",
-      date: "PENDING", 
+      date: "PENDING",
       icon: FaRocket
     }
   ];
@@ -34,12 +37,12 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-background text-foreground font-mono p-4 md:p-8 selection:bg-primary selection:text-background overflow-x-hidden">
       <div className="max-w-4xl mx-auto space-y-8">
-        
+
         {/* Header */}
         <div className="border-b border-border pb-4 mb-8">
           <div className="flex items-center gap-2 mb-4">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="text-primary hover:underline flex items-center gap-2"
             >
               <FaArrowLeft />
@@ -73,7 +76,7 @@ export default function Blog() {
             <FaPen className="text-primary" />
             ./upcoming_posts.log
           </h3>
-          
+
           <div className="grid gap-4">
             {upcomingPosts.map((post, index) => (
               <div
